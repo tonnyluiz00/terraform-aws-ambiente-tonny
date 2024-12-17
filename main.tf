@@ -16,7 +16,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "this" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = each.value["instance_type"]
+  instance_type = "t3.micro"
   availability_zone = "us-east-1a"
 
   dynamic "ebs_block_device" {
