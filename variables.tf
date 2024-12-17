@@ -18,4 +18,5 @@ variable "environment" {
 variable "ebs_block_devices" {
   description = "lista de volumes ebs para ser criado e montando na instancia"
   type        = list(any)
+  default = []
 }
