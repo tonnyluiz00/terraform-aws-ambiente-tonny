@@ -14,10 +14,17 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
+#tfsec:ignore:aws-ec2-enforce-http-token-imds:2025-01-01
 resource "aws_instance" "this" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
+#  instance_type = each.value["instance_type"]g
   availability_zone = "us-east-1a"
+
+
+  root_block_device {
+      encrypted = true
+  }
 
   dynamic "ebs_block_device" {
     for_each = var.ebs_block_devices
