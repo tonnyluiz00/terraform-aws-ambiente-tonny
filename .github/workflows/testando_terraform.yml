@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Baixando Codigo
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
       - name: Instalando o tfsec
-      - run: curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash  # Executar comando lá dentro da instancia do Github
+        run: curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash  # Executar comando lá dentro da instancia do Github
       - name: executando o tfsec
-      - run: ls -la
+        run: ls -la
