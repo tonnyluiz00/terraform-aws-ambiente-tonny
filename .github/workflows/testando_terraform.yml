@@ -1,10 +1,10 @@
 name: testando-modulo-terraform
-run-name: ${{ github.actor }} is learning Github Actions
+run-name: ${{ github.actor }} iniciou pipeline
 on:
   push:
 jobs:
   tfsec:
-    run-on: ubuntu-version
+    runs-on: ubuntu-version
     steps:
       - name: Baixando Codigo
       - uses: actions/checkout@v4
